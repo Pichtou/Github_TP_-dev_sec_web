@@ -10,7 +10,7 @@ on:
   
 
 jobs:
-  build:
+  automation-with-trivy:
     name: Build
     runs-on: ubuntu-20.04
     steps:
