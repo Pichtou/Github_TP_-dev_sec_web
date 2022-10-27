@@ -1,4 +1,4 @@
-name: automation scan with trivy
+name: automation scan - trivy
 
 on:
   push: 
