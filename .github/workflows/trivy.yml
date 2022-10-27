@@ -34,3 +34,9 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact-trivy-nginx
+          path: 'trivy-results.sarif'
