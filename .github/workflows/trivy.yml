@@ -1,7 +1,10 @@
 name: automation scan with trivy
 
 on:
-  workflow_dispatch:
+  pull_request:
+    branches: 
+      - main 
+  
 
 jobs:
   build:
