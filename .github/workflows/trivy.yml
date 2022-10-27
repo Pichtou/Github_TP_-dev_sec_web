@@ -61,9 +61,9 @@ jobs:
           input: /github/workspace/vuln-image.tar
           severity: 'CRITICAL,HIGH'
   
-  automation-with-trivy-busybox:
-  #scan de l'image busybox sur dockerhub autre image séléctionnner pour tester trivy 
-    name: scan-busybox
+  automation-with-trivy-alpine:
+  #scan de l'image alpine sur dockerhub autre image séléctionnner pour tester trivy 
+    name: scan-alpine
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
@@ -71,8 +71,8 @@ jobs:
 
       - name: Generate tarball from image
         run: |
-          docker pull busybox:latest 
-          docker save -o vuln-image.tar busybox:latest
+          docker pull alpine:latest 
+          docker save -o vuln-image.tar alpine:latest
         
       - name: Run Trivy vulnerability scanner in tarball mode
         uses: aquasecurity/trivy-action@master
