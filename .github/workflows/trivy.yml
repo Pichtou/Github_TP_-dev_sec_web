@@ -11,6 +11,7 @@ on:
 
 jobs:
   automation-with-trivy-nginx:
+  #scan de l'image nginx sur docker 
     name: scan-nginx
     runs-on: ubuntu-20.04
     steps:
@@ -40,7 +41,9 @@ jobs:
         with:
           name: artifact-trivy-nginx
           path: 'trivy-results.sarif'
+  
   automation-with-trivy-dvwa:
+  #scan de l'image dvwa sur dockerhub dans vulnerables/dvwa pour tester trivy, app web vulnérabe
     name: scan-dvwa
     runs-on: ubuntu-20.04
     steps:
@@ -51,6 +54,25 @@ jobs:
         run: |
           docker pull vulnerables/web-dvwa:latest 
           docker save -o vuln-image.tar vulnerables/web-dvwa:latest
+        
+      - name: Run Trivy vulnerability scanner in tarball mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          input: /github/workspace/vuln-image.tar
+          severity: 'CRITICAL,HIGH'
+  
+  automation-with-trivy-busybox:
+  #scan de l'image busybox sur dockerhub autre image séléctionnner pour tester trivy 
+    name: scan-busybox
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate tarball from image
+        run: |
+          docker pull busybox:latest 
+          docker save -o vuln-image.tar busybox:latest
         
       - name: Run Trivy vulnerability scanner in tarball mode
         uses: aquasecurity/trivy-action@master
