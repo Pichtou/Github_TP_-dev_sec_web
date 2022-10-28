@@ -7,7 +7,9 @@
 
 ● Création de l’arborescence pour le bon fonctionnement de Github Actions
 
-● Automatisation des tests de sécurité avec Trivy à l'aide d'une Github Actions
+● Automatisation des tests de sécurité avec Trivy à l'aide d'une Github Actions  
+
+● Utilisation de la syntaxe de trivy présente sur Marketplace ou dans le repo Github aquasecurity/trivy-action 
 
 ○ Scanner les images docker:  
 ■ DVWA  - ici on a choisi l'image officiel de DVWA situé dans vulnerales/dvwa dans Dockerhub  
