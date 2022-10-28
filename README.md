@@ -14,7 +14,9 @@
 ○ Scanner les images docker:  
 ■ DVWA  - ici on a choisi l'image officiel de DVWA situé dans vulnerales/dvwa dans Dockerhub  
 ■ Nginx  - image officiel du package nginx  
-■ Une autre image de votre choix  - ici on a choisi l'image du package alpine   
+■ Une autre image de votre choix  - ici on a choisi l'image du package alpine     
+
+[Plus d'infos sur trivy](https://aquasecurity.github.io/trivy/v0.33/)  
 
 ## Automatisation avec TF Sec  
 
