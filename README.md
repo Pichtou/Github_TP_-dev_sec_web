@@ -12,7 +12,7 @@
 ● Utilisation de la syntaxe de trivy présente sur Marketplace ou dans le repo Github aquasecurity/trivy-action 
 
 ○ Scanner les images docker:  
-■ DVWA  - ici on a choisi l'image officiel de DVWA situé dans vulnerales/dvwa dans Dockerhub  
+■ DVWA  - ici on a choisi l'image officiel de DVWA situé dans vulnerales/web-dvwa dans Dockerhub sinon il est possible de le trouver dans le repo Github digininja/DVWA  
 ■ Nginx  - image officiel du package nginx  
 ■ Une autre image de votre choix  - ici on a choisi l'image du package alpine     
 
